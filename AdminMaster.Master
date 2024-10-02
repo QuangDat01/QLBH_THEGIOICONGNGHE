@@ -1,0 +1,86 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="QLBH.Admin.Admin" %>
+
+<%@ Register Assembly="CKFinder" Namespace="CKFinder" TagPrefix="CKFinder" %>
+<%@ Register Src="~/Admin/UserControls/LeftMenu.ascx" TagPrefix="uc1" TagName="LeftMenu" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <link href="CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="CSS/shop-homepage.css" rel="stylesheet" />
+
+    <script src="JS/jquery.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <script src="../ckeditor/ckeditor.js"></script>
+    <script src="../ckfinder/ckfinder.js"></script>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><i class="fa-solid fa-laptop"></i>THẾ GIỚI CÔNG NGHỆ</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#"><i class="fa-solid fa-circle-info"></i>Giới thiệu</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-servicestack"></i>Dịch vụ</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-address-book"></i>Phản hồi</a>
+                        </li>
+                        <li>
+                            <a href="https://thegioicongnghe.online/en_US/shop"><i class="fa-solid fa-at"></i>Thegioicongnghe@gmail.com</a>
+                        </li>
+                        <li>
+                            <button id="btnShowLogin" class="btn btn-primary navbar-btn">
+                                <i class="fa-solid fa-user-tie"></i> Đăng nhập
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
+        <uc1:LeftMenu runat="server" ID="LeftMenu" />
+
+        <div class="col-md-9">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        $(function () {
+            // Hiển thị modal khi nhấn nút Đăng nhập
+            $("#btnShowLogin").click(function () {
+                $('#LoginModal').modal('show');
+            });
+        });
+    </script>
+</body>
+</html>
