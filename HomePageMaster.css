@@ -1,0 +1,161 @@
+﻿/* Cấu trúc và phong cách chung cho thanh navigation */
+.navbar {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các mục con xuống hàng khi không đủ không gian */
+    justify-content: space-between; /* Căn đều không gian giữa các mục */
+    background-color: #222; /* Màu nền cho thanh navbar */
+    border: none; /* Bỏ đường viền mặc định */
+    padding: 10px 20px; /* Thêm padding cho toàn bộ navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng đổ bóng nhẹ cho navbar */
+    margin-bottom: 5px;
+}
+
+/* Phong cách cho logo và button toggle */
+.navbar-header {
+    display: flex; /* Sử dụng flex để căn chỉnh */
+    justify-content: center; /* Căn giữa các mục */
+    align-items: center; /* Căn giữa logo và button */
+    flex: 1; /* Đảm bảo logo và button nằm trên cùng hàng */
+}
+
+.navbar-brand {
+    color: #f39c12; /* Màu chữ cho thương hiệu */
+    font-size: 1.6em; /* Kích thước chữ cho thương hiệu */
+    padding: 10px 15px; /* Khoảng cách bên trong */
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    text-transform: uppercase; /* Chuyển chữ thương hiệu thành chữ in hoa */
+    text-decoration: none; /* Bỏ gạch chân */
+}
+
+/* Các mục con của navigation */
+.navbar-nav {
+    display: flex; /* Đảm bảo các mục nằm trên cùng một hàng */
+    margin: 0; /* Bỏ margin mặc định */
+    padding: 0; /* Bỏ padding mặc định */
+}
+
+    /* Các mục trong navbar */
+    .navbar-nav li {
+        flex: 1 0 auto; /* Điều chỉnh kích thước và căn đều các mục */
+        text-align: center; /* Căn giữa các mục con */
+        list-style: none; /* Bỏ dấu chấm tròn trước các mục */
+        margin-left: 15px; /* Thêm khoảng cách bên trái cho các mục */
+    }
+
+        /* Tùy chỉnh thêm cho các mục con trong navigation */
+        .navbar-nav li a {
+            font-size: 1.2em; /* Tăng kích thước chữ cho các liên kết trong navbar */
+            padding: 10px 15px; /* Điều chỉnh khoảng cách bên trong nếu cần */
+            display: block;
+            color: #fff; /* Màu chữ */
+            text-decoration: none; /* Bỏ gạch chân */
+            transition: color 0.3s, background-color 0.3s; /* Tạo hiệu ứng mượt khi hover */
+        }
+
+            .navbar-nav li a:hover {
+                background-color: #575757; /* Màu nền khi rê chuột */
+                color: #f39c12; /* Màu chữ khi rê chuột */
+            }
+
+        /* Hiệu ứng cho các mục dropdown */
+        .navbar-nav li.dropdown {
+            position: relative; /* Đảm bảo dropdown menu sẽ căn chỉnh dựa trên li chứa nó */
+        }
+
+    /* Dropdown menu với hiệu ứng đẩy và làm mờ */
+    .navbar-nav .dropdown-menu {
+        background-color: #333;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, opacity 0.3s;
+        transform: translateX(-20px); /* Hiệu ứng đẩy menu sang trái */
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0; /* Vị trí xuất hiện của menu bên trái */
+        display: flex; /* Sử dụng flexbox */
+        flex-wrap: nowrap; /* Các mục con không xuống hàng */
+        justify-content: flex-start; /* Căn các mục con sang trái */
+        white-space: nowrap; /* Đảm bảo các mục con không bị xuống dòng */
+    }
+
+    .navbar-nav li:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0); /* Menu hiển thị mượt */
+    }
+
+    /* Các mục trong dropdown sẽ xếp ngang */
+    .navbar-nav .dropdown-menu li {
+        display: inline-block; /* Đảm bảo các mục con xếp theo hàng ngang */
+        text-align: center;
+        padding: 10px 15px; /* Khoảng cách giữa các mục */
+    }
+
+        .navbar-nav .dropdown-menu li a {
+            color: #fff;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, color 0.3s;
+            white-space: nowrap; /* Giữ chữ không bị xuống dòng */
+        }
+
+            .navbar-nav .dropdown-menu li a:hover {
+                background-color: #575757; /* Màu nền khi rê chuột vào mục dropdown */
+                color: #f39c12; /* Màu chữ khi rê chuột */
+            }
+
+            /* Icon cho các mục trong dropdown */
+            .navbar-nav .dropdown-menu li a i {
+                margin-right: 8px; /* Khoảng cách giữa icon và chữ */
+                font-size: 1.1em; /* Kích thước của icon */
+            }
+
+    /* Thay đổi icon caret cho dropdown */
+    .navbar-nav .dropdown-toggle .caret {
+        border-top-color: #fff; /* Màu caret */
+        border-bottom-color: #fff; /* Màu caret */
+    }
+
+    /* Hiệu ứng hover cho các mục trong dropdown */
+    .navbar-nav .dropdown-menu li a:hover {
+        background-color: #444; /* Màu nền khi rê chuột vào mục dropdown */
+        color: #f39c12; /* Màu chữ khi rê chuột */
+        border-radius: 4px; /* Bo tròn góc khi hover */
+    }
+
+    /* Hiệu ứng chuyển đổi khi hover vào các mục */
+    .navbar-nav li a:hover {
+        transform: translateY(-2px); /* Hiệu ứng nâng nhẹ các mục khi hover */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tạo đổ bóng cho mục */
+    }
+
+/* Thanh tìm kiếm */
+.navbar-form {
+    margin: 0; /* Bỏ margin mặc định */
+}
+
+    .navbar-form .form-group {
+        margin-right: 10px; /* Khoảng cách giữa input và button */
+    }
+
+    .navbar-form .form-control {
+        width: 200px; /* Chiều rộng của input tìm kiếm */
+        border-radius: 4px; /* Bo tròn góc cho input */
+    }
+
+/* Phong cách cho mục đăng nhập */
+.navbar-nav.navbar-right li a {
+    color: #fff; /* Màu chữ cho mục đăng nhập */
+    font-size: 1.2em; /* Kích thước chữ */
+    padding: 10px 15px; /* Khoảng cách bên trong */
+}
+.big-banner {
+    margin-bottom: 20px; /* Space below the banner */
+}

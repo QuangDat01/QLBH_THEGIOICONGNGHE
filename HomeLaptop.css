@@ -1,0 +1,136 @@
+﻿
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 80px;
+    border-top: 1px solid #444;
+    text-align: center; /* Căn giữa toàn bộ nội dung trong footer */
+}
+
+    .footer h4,
+    .footer p,
+    .footer a {
+        margin: 0 0 15px; /* Khoảng cách dưới mỗi phần tử */
+    }
+
+    .footer a {
+        color: #ff6f61;
+        text-decoration: none;
+    }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+.social-link {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-color: #444;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    margin: 0 5px; /* Khoảng cách giữa các liên kết mạng xã hội */
+    font-size: 18px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+    .social-link:hover {
+        background-color: #ff6f61;
+    }
+
+.copyright {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #bbb;
+}
+
+.image-container {
+    display: flex; /* Sử dụng flexbox để xếp ngang */
+    justify-content: space-between; /* Tạo khoảng cách đều giữa các ảnh */
+    width: 100%; /* Kích thước của thùng chứa */
+}
+
+.image {
+    border: none;
+    width: 32%; /* Kích thước ảnh (có thể điều chỉnh theo nhu cầu) */
+    height: auto; /* Tự động điều chỉnh chiều cao */
+    margin: 0 5px; /* Khoảng cách giữa các ảnh */
+    margin-bottom: 15px;
+    
+    transition: transform 0.3s; /* Hiệu ứng khi hover */
+}
+
+    .image:hover {
+        transform: translateY(-5px); /* Nâng ảnh lên khi hover */
+    }
+    /*Loader*/
+/* Container chính chứa sản phẩm */
+.product-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các sản phẩm xuống dòng khi không đủ không gian */
+    justify-content: center; /* Căn giữa các sản phẩm trong container */
+    gap: 20px; /* Khoảng cách giữa các sản phẩm */
+    margin-top: 20px;
+}
+
+/* Định dạng cho từng sản phẩm */
+.product {
+    width: 270px; /* Chiều rộng của mỗi sản phẩm */
+    border: 1px solid #ddd; /* Đường viền của sản phẩm */
+    padding: 10px; /* Khoảng cách bên trong sản phẩm */
+    text-align: center; /* Căn giữa nội dung sản phẩm */
+    background-color: #f9f9f9; /* Màu nền sản phẩm */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+    border-radius: 5px; /* Bo góc sản phẩm */
+    transition: transform 0.2s; /* Hiệu ứng phóng to khi hover */
+    margin-bottom: 20px; /* Khoảng cách phía dưới giữa các dòng sản phẩm */
+}
+
+    /* Hiệu ứng phóng to sản phẩm khi di chuột */
+    .product:hover {
+        transform: scale(1.05);
+    }
+
+    /* Định dạng cho hình ảnh sản phẩm */
+    .product img {
+        width: 260px; /* Chiều rộng cố định của ảnh */
+        height: 200px; /* Chiều cao cố định của ảnh */
+        object-fit: cover; /* Cắt ảnh theo kích thước khung */
+        margin-bottom: 10px; /* Khoảng cách bên dưới hình ảnh */
+        border-radius: 5px; /* Bo góc hình ảnh */
+    }
+
+    /* Định dạng cho tên sản phẩm */
+    .product h3 {
+        font-size: 16px;
+        margin-bottom: 10px; /* Khoảng cách bên dưới tên sản phẩm */
+        color: red; /* Đổi màu tên sản phẩm thành màu đỏ */
+    }
+
+/* Định dạng cho mô tả sản phẩm */
+.product-description {
+    color: midnightblue;
+    display: -webkit-box; /* Hiển thị dưới dạng hộp linh hoạt */
+    -webkit-box-orient: vertical; /* Định hướng theo chiều dọc */
+    -webkit-line-clamp: 4; /* Hiển thị tối đa 4 dòng */
+    overflow: hidden; /* Ẩn phần dư thừa */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm nếu nội dung dài hơn */
+    height: auto; /* Để chiều cao tự động */
+    font-size: 14px; /* Giảm kích thước chữ */
+    background-color: rgba(211, 211, 211, 0.5); /* Nền xám cho mô tả */
+    padding: 5px; /* Khoảng cách bên trong */
+    border-radius: 5px; /* Bo góc cho nền */
+    display: inline-block; /* Để chiều rộng phù hợp với chữ */
+}
+
+/* Định dạng cho giá sản phẩm */
+.product-price {
+    font-size: 16px;
+    font-weight: bold; /* Đặt giá in đậm */
+    color: red; /* Màu sắc cho giá */
+    margin-bottom: 5px; /* Khoảng cách bên dưới giá */
+}

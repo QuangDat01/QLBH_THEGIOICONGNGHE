@@ -1,0 +1,203 @@
+﻿/* Khung chi tiết sản phẩm */
+.product-detail-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+    /* Tiêu đề sản phẩm */
+    .product-detail-container h1,
+    .product-detail-container h2 {
+        color: #333;
+    }
+
+/* Hình ảnh sản phẩm */
+#product-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng khung */
+    border-radius: 10px;
+}
+
+/* Nút thêm vào giỏ hàng */
+#buy-button,
+.add-to-cart {
+    font-size: 18px;
+    color: green; /* Đổi màu chữ thành xanh */
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid none; /* Thêm đường viền xanh */
+    background-color: transparent; /* Đặt nền trong suốt */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s; /* Thêm hiệu ứng chuyển đổi cho kích thước */
+    cursor: pointer;
+    animation: bounce 1.5s infinite; /* Thêm hiệu ứng nhảy */
+}
+/* Hiệu ứng nhấp nhô */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px); /* Nhảy lên */
+    }
+
+    60% {
+        transform: translateY(-5px); /* Nhảy xuống */
+    }
+}
+
+/* Hiệu ứng khi hover */
+#buy-button:hover,
+.add-to-cart:hover {
+    background-color: mistyrose; /* Màu nền nhạt khi hover */
+    transform: scale(1.05); /* Tăng kích thước khi hover */
+}
+
+/* Định dạng cho mô tả sản phẩm */
+#product-description,
+#product-detail {
+    font-size: 18px;
+    color: #333;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+}
+/* Mô tả sản phẩm */
+#product-description {
+    font-size: 16px;
+    color: #333;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.4);
+    display: inline-block;
+}
+/* Định dạng cho giá sản phẩm */
+#product-price {
+    font-size: 20px; /* Tăng kích thước chữ giá */
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: snow;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    white-space: nowrap;
+    margin-left: 70px;
+}
+#product-price:hover {
+    box-shadow: 0 0 20px red; /* Hiệu ứng lấp lánh khi hover */
+    transition: box-shadow; /* Hiệu ứng chuyển đổi */
+}
+    /* Khung cho các hình ảnh ưu đãi */
+    .img {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+    }
+
+    /* Các hình ảnh ưu đãi */
+    .img img {
+        width: 390px;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+        /* Hiệu ứng hover cho hình ảnh */
+        .img img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+/* Định dạng cho tiêu đề mô tả */
+.P1,
+.P {
+    font-size: 18px;
+    color: #0066cc; /* Màu chữ đẹp */
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0; /* Khoảng cách trên và dưới */
+    padding: 10px;
+    border: 2px solid #0066cc;
+    border-radius: 8px;
+    background-color: #f0f8ff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Khối thông tin khuyến mãi */
+.offer-detail {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+    /* Tiêu đề khuyến mãi */
+    .offer-detail .title {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #d9534f; /* Màu đỏ nhẹ cho tiêu đề */
+        font-weight: bold;
+    }
+
+/* Các mục khuyến mãi */
+.private-offer {
+    margin-bottom: 15px;
+}
+
+/* Khối hình ảnh và thông tin khuyến mãi */
+.image-offer-container {
+    display: flex; /* Sử dụng flexbox để chia đôi */
+    justify-content: space-between; /* Căn giữa giữa hai phần */
+    margin: 20px 0; /* Khoảng cách trên và dưới */
+}
+
+/* Hình ảnh sản phẩm trong khối hình ảnh */
+#mobile-image {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng khung */
+    height: auto; /* Giữ tỉ lệ của hình ảnh */
+}
+
+/* Khối thông tin khuyến mãi */
+.offer-detail {
+    flex: 1; /* Chiếm phần còn lại của khung */
+    margin-left: 20px; /* Khoảng cách giữa hình ảnh và khuyến mãi */
+}
+
+/* Cải tiến nút tăng/giảm số lượng */
+.btn-light {
+    padding: 6px 12px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #f0f0f0; /* Màu nền cho nút */
+    border: 1px solid #ccc; /* Đường viền cho nút */
+    border-radius: 5px; /* Bo góc cho nút */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+
+    .btn-light:hover {
+        background-color: #e6e6e6; /* Đổi màu khi hover */
+    }
+
+/* Ô số lượng sản phẩm */
+.quantity {
+    padding: 5px;
+}
