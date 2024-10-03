@@ -1,0 +1,202 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomePageMaster.master.cs" Inherits="QLBH.FontEnd.HomePageMaster" %>
+
+<!DOCTYPE html>
+<html>
+    <%-- Links bootraps, css, js --%>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="CSS/HomePageMaster.css" rel="stylesheet" />
+    <link href="CSS/HomeLaptop.css" rel="stylesheet" />
+    <link href="CSS/Cart.css" rel="stylesheet" />
+
+    <script src="JS/Search.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="JS/Cart.js"></script>
+    <script src="JS/CartMobile.js"></script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><i class="fa-brands fa-shopify"></i> THẾ GIỚI CÔNG NGHỆ</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="HomePage.aspx"><i class="fa-solid fa-house-chimney"></i> Trang chủ</a></li>
+                        <li><a href="About.aspx"><i class="fa-solid fa-circle-info"></i> Giới thiệu</a></li>
+                        <li><a>
+                          <input type="text" class="form-control" id="search-input" placeholder="Tìm kiếm..." aria-label="Search" onkeydown="if (event.key === 'Enter') { performSearch(); }">
+                           Tìm kiếm <i class="fa-brands fa-searchengin"></i></a>
+                           <ul id="search-results" style="display: none; position: absolute;"></ul> <!-- Khu vực hiển thị kết quả tìm kiếm -->
+                           </li>
+                        <li><a href="#" onclick="alert(' Xin lỗi, Chức năng này đang được cập nhật!')"><i class="fa-solid fa-user-tie"></i> Đăng nhập</a></li>
+                        <li><a href="#" onclick="openModal();"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav custom-nav">
+                        <li class="dropdown">
+                            <a href="HomeMobile.aspx" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa-solid fa-mobile-alt"></i> Điện thoại</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="HomeLaptop.aspx" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa-solid fa-laptop"></i> Laptop <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa-solid fa-shield-alt"></i> Bảo Hành <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="WarrantyPolicy.aspx"><i class="fa-solid fa-award"></i> Bảo hành sản phẩm</a></li>
+                                <li><a href="TechnicalSupport.aspx"><i class="fa-solid fa-headset"></i> Hỗ trợ kỹ thuật</a></li>
+                                <li><a href="ReturnPolicy.aspx"><i class="fa-solid fa-rotate"></i> Đổi trả sản phẩm</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa-solid fa-tools"></i> Dịch Vụ Sửa Chữa <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="MobileRepair.aspx"><i class="fa-solid fa-mobile-alt"></i> Sửa chữa điện thoại</a></li>
+                                <li><a href="ProductRepair.aspx"><i class="fa-solid fa-laptop-medical"></i> Sửa chữa Laptop</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa-solid fa-map-marker-alt"></i> Địa chỉ<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" onclick="alert(' Xin lỗi, Cơ sở tại TP.Hà Nội chúng tôi chưa thể tìm được địa điểm để xây dựng, Bạn có thể đặt hàng Online!')"><i class="fa-solid fa-location-arrow"></i> Hà Nội</a></li>
+                                <li>
+                                    <a href="#" onclick="alert(' Xin lỗi, Cơ sở tại TP.HCM đang được xây dựng, Bạn có thể đặt hàng Online!'); return false;">
+                                        <i class="fa-solid fa-location-arrow"></i> TP.HCM</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="col-md-9">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>Về Chúng Tôi</h4>
+                        <p>THẾ GIỚI CÔNG NGHỆ chuyên cung cấp các sản phẩm công nghệ và dịch vụ sửa chữa uy tín.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Liên Hệ</h4>
+                        <p>Email: support@thegioicongnghe.com</p>
+                        <p>Hotline: 1900-8888</p>
+                        <p>Địa chỉ: 22/103 Đường Lý Sơn, Ngọc Thụy, Long Biên, TP.Hà Nội</p>
+                        <p style="font-weight: bold; font-size: 20px;">Theo Dõi Chúng Tôi</p>
+                    </div>
+                    <div class="TheoDoi">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fa-solid fa-envelope-open-text"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p class="copyright">&copy; 2024 THẾ GIỚI CÔNG NGHỆ. Web Designer by Trần Quang Đạt.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Modal Giỏ Hàng -->
+        <div id="myCartModal" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Giỏ Hàng của Bạn <i class="fa-solid fa-basket-shopping"></i></h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="table-responsive">
+                            <table id="show-table" class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Hình ảnh <i class="fa-regular fa-image"></i></th>
+                                        <th class="text-center">Tên sản phẩm <i class="fa-solid fa-signature"></i></th>
+                                        <th class="text-center">Giá tiền <i class="fa-solid fa-dollar-sign"></i></th>
+                                        <th class="text-center">Số lượng <i class="fa-solid fa-arrow-up-1-9"></i></th>
+                                        <th class="text-center">Xóa <i class="fa-solid fa-delete-left"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="show-cart">
+                                    <!-- Các sản phẩm trong giỏ hàng sẽ hiển thị ở đây -->
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3" class="text-right">Tổng cộng:</td>
+                                        <td colspan="2" class="text-right">
+                                            <b id="subtotals" style="color: red;">0 VNĐ</b>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="payment-button">
+                            <i class="fa-solid fa-hand-holding-dollar"></i> Thanh toán
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="closeModal()">
+                            <i class="fa-solid fa-xmark"></i> Đóng
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+ <%--    Hàm mở/đóng modal giỏ hàng--%>
+    <script>
+        $(document).ready(function () {
+            $("a.load-page").click(function (event) {
+                event.preventDefault();
+                var pageUrl = $(this).attr("href");
+                $("#ContentPlaceHolder1").load(pageUrl + " #ContentPlaceHolder1 > *");
+            });
+        });
+
+        // Đóng modal khi nhấp ra ngoài
+        window.onclick = function (event) {
+            const modal = document.getElementById("myCartModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+        document.getElementById('payment-button').addEventListener('click', function () {
+            const cartItems = document.querySelectorAll('.show-cart tr');
+            if (cartItems.length > 0) {
+                // Chuyển hướng đến trang thanh toán
+                window.location.href = 'ShoppingIF.aspx';
+            } else {
+                alert('Vui lòng lựa chọn sản phẩm!');
+            }
+        });
+
+        // Hàm mở modal giỏ hàng
+        function openModal() {
+            document.getElementById("myCartModal").style.display = "block";
+        }
+
+        // Hàm đóng modal giỏ hàng
+        function closeModal() {
+            document.getElementById("myCartModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
+
